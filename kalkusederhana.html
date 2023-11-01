@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <input v-model="num1" type="number" placeholder="Masukkan angka pertama">
+            <input v-model="num2" type="number" placeholder="Masukkan angka kedua">
+        </div>
+        <div>
+            <button @click="add">+</button>
+            <button @click="subtract">-</button>
+            <button @click="multiply">x</button>
+            <button @click="divide">/</button>
+        </div>
+        <div>
+            <h2>Hasil: {{ result }}</h2>
+        </div>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        num1: 0,
+        num2: 0,
+        result: 0
+      },
+      methods: {
+        add() {
+          this.result = parseFloat(this.num1) + parseFloat(this.num2);
+        },
+        subtract() {
+          this.result = parseFloat(this.num1) - parseFloat(this.num2);
+        },
+        multiply() {
+          this.result = parseFloat(this.num1) * parseFloat(this.num2);
+        },
+        divide() {
+          if (this.num2 != 0) {
+            this.result = parseFloat(this.num1) / parseFloat(this.num2);
+          } else {
+            this.result = 'Tidak dapat dibagi dengan nol';
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
