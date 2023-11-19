@@ -2,16 +2,16 @@ const Url = "https://api-berita-indonesia.vercel.app/antara/politik/";
 
 function createCard(article) {
   return `
-  <div class="col-md-4 mb-3">
-  <div class="card">
-    <img src="${article.thumbnail}" class="card-img-top" alt="${article.title}">
-    <div class="card-body shadow d-flex flex-column">
-      <h5 class="card-title">${article.title}</h5>
-      <p class="card-text flex-grow-1 text-justify">${article.description}</p>
-      <a href="${article.link}" class="btn btn-primary w3-red ">Lihat Selengkapnya</a>
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <img src="${article.thumbnail}" class="card-img-top" alt="${article.title}">
+            <div class="card-body shadow d-flex flex-column">
+                <h5 class="card-title">${article.title}</h5>
+                <p class="card-text flex-grow-1 text-justify">${article.description}</p>
+                <a href="${article.link}" class="btn btn-primary w3-red ">Lihat Selengkapnya</a>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
   `;
 }
 
