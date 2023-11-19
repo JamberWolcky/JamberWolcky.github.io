@@ -1,52 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politik - Antara News</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="icon" type="image/png" href="https://www.antaranews.com/img/antaranews.com.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    .card-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+  </style>
 </head>
 <body>
-    <div id="app">
-        <div>
-            <input v-model="num1" type="number" placeholder="Masukkan angka pertama">
-            <input v-model="num2" type="number" placeholder="Masukkan angka kedua">
-        </div>
-        <div>
-            <button @click="add">+</button>
-            <button @click="subtract">-</button>
-            <button @click="multiply">x</button>
-            <button @click="divide">/</button>
-        </div>
-        <div>
-            <h2>Hasil: {{ result }}</h2>
-        </div>
-  </div>
+  <header id="news-header" class="mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <a class="navbar-brand" href="https://www.antaranews.com">
+            <img src="https://www.antaranews.com/img/antaranews.com.png" alt="Politik - ANTARA News" height="40" class="d-inline-block align-top">
+        </a>
+        <h5 class="mb-0 text-danger">Politik - ANTARA News</h5>
+        <span class="navbar-text">
+            Berita Terkini dan Terpercaya Indonesia
+        </span>
+    </nav>
+  </header>
 
-  <script>
-    new Vue({
-      el: '#app',
-      data: {
-        num1: 0,
-        num2: 0,
-        result: 0
-      },
-      methods: {
-        add() {
-          this.result = parseFloat(this.num1) + parseFloat(this.num2);
-        },
-        subtract() {
-          this.result = parseFloat(this.num1) - parseFloat(this.num2);
-        },
-        multiply() {
-          this.result = parseFloat(this.num1) * parseFloat(this.num2);
-        },
-        divide() {
-          if (this.num2 != 0) {
-            this.result = parseFloat(this.num1) / parseFloat(this.num2);
-          } else {
-            this.result = 'Tidak dapat dibagi dengan nol';
-          }
-        }
-      }
-    })
-  </script>
+  <div class="container mt-5">
+    <div class="row" id="newsContainer">
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+  
 </body>
 </html>
